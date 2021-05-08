@@ -6,13 +6,13 @@ import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
 
-    static final int SCREEN_WIDTH = 600;
-    static final int SCREEN_HEIGHT = 600;
+    static final int SCREEN_WIDTH = 125;
+    static final int SCREEN_HEIGHT = 50;
     static final int UNIT_SIZE = 25;
     static final int BORDER = 1;
-    static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
-    static final int DELAY = 100;
-    static final int INITIAL_PARTS = 20;
+    static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
+    static final int DELAY = 500;
+    static final int INITIAL_PARTS = 2;
     static final char DEFAULT_DIR = 'R';
     final int[] x = new int[GAME_UNITS];
     final int[] y = new int[GAME_UNITS];
@@ -128,11 +128,15 @@ public class GamePanel extends JPanel implements ActionListener {
         if (x[0] - BORDER == appleX && y[0] -BORDER == appleY)  {
             bodyParts++;
             applesEaten++;
-            newApple();
+            if (bodyParts < GAME_UNITS) {
+                newApple();
+            } else {
+                running = false;
+            }
         }
     }
     public void checkCollisions() {
-        for (int i = bodyParts; i > 0; i--) {
+        for (int i = bodyParts - 1; i > 0; i--) {
             if (x[0] == x[i] && y[0] == y[i]) {
                 running = false;
                 break;
@@ -149,7 +153,7 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setColor(Color.WHITE);
         g.setFont(new Font("Ink Free", Font.BOLD, 20));
         FontMetrics metrics = getFontMetrics(g.getFont());
-        String score = "Final score: " + applesEaten;
+        String score = bodyParts == GAME_UNITS ? "---Perfect Snake---" : "Final score: " + applesEaten;
         g.drawString(score, (SCREEN_WIDTH-metrics.stringWidth(score))/2, SCREEN_HEIGHT/2);
         String start = "Press SPACE to start new game";
         g.drawString(start, (SCREEN_WIDTH-metrics.stringWidth(start))/2, SCREEN_HEIGHT/2-2*metrics.getHeight());
