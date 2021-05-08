@@ -36,8 +36,6 @@ public class GamePanel extends JPanel implements ActionListener {
         direction = DEFAULT_DIR;
         Arrays.fill(x, BORDER);
         Arrays.fill(y, BORDER);
-//        x[0] = BORDER;
-//        y[0] = BORDER;
 
         newApple();
         running = true;
