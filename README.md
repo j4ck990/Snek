@@ -8,18 +8,14 @@ Landing page with buttons and background
 
 # Improvements
 ### Landing Page
-Plans to improve aesthetics.
-
-Temporary matrix background as placeholder until snake AI has finished
-  
-Buttons currently all point to the same snake game, Will be changed when game interface is ready
+* Plans to improve aesthetics
+* Temporary matrix background as placeholder until snake AI has finished
+* Buttons currently all point to the same snake game, Will be changed when game interface is ready
 
 ### Snake game
-Need to implement 2 boards.
-
-Implement combo system.
-
-Improve aesthetics.
+* Need to implement 2 boards.
+* Implement combo system.
+* Improve aesthetics.
 
 # Milestone 2
 Hamiltonian cycle AI
