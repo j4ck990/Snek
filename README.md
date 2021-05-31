@@ -1,15 +1,15 @@
 # Snek
 A variant of the classic snake game featuring different gamemodes
 
-
-# Multiplayer
-Compete with your friends in a 1v1 to decide who is the better snake. 
-Score is calculated base on how often apples are eaten and how long a player lasts. 
-
-
-# Challenge AI
-Compete and outsmart the in-house AI that plays the snake game at different difficulties
+# Landing Page
+Basic landing page has been done up.
+  Plans to improve aesthetics.
+  Temporary matrix background as placeholder until snake AI has finished
+  
+Buttons currently all point to the same snake game. Will be changed when game interface is ready.
 
 
-# AFK mode
-Allow the AI to play the perfect snake game and be mesmerised by it
+
+
+# Proof of Concept
+https://j4ck990.github.io/Snek/
