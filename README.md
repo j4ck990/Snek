@@ -24,4 +24,4 @@ Path finding algorithm - A star
 
 
 # Proof of Concept
-https://j4ck990.github.io/Snek/
+[Snake Game](https://j4ck990.github.io/Snek/)
