@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #000;
+}
+
+.content {
+    top: 15%;
+    margin: 0% 40%;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+
+    
+}
+
+.title h1 {
+    color: rgb(67, 233, 94);
+    font-size: 100px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    animation: Slide_Up 2s ease;
+    overflow: hidden;
+}
+
+.buttons a{
+    text-decoration: none;
+    
+}
+
+.option{
+    display: block;
+    margin-bottom: 50px;
+    width: 100%;
+    color: rgb(67, 233, 94);
+    background-color: transparent;
+    /* background-color: rgba(0,0,0,0.6); */
+    font-size: 30px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    border: none;
+    outline: solid 1px gray;
+    box-shadow: inset 0 0 0 0 rgb(67, 233, 94);
+    transition: ease-out 0.3s;
+    outline: none;
+    overflow: hidden;
+}
+
+.option:hover {
+    box-shadow: inset 400px 0 0 0 rgb(67, 233, 94);
+    cursor: pointer;
+    color: black;
+}
+
+.option p {
+    margin: 5px 20px;
+}
+
+#button1 {
+    
+    animation: Slide_Up 2.3s ease;
+
+}
+
+#button2 {
+    animation: Slide_Up 2.5s ease;
+}
+
+#button3 {
+    animation: Slide_Up 2.7s ease;
+}
+
+
+@keyframes Slide_Up {
+    0% {
+        transform: translateY(500px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
