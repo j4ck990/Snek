@@ -2,7 +2,7 @@
 A variant of the classic snake game featuring different gamemodes
 
 # Landing Page
-Basic landing page has been done up.
+Basic landing page has been done up. \n
   Plans to improve aesthetics.
   Temporary matrix background as placeholder until snake AI has finished
   
