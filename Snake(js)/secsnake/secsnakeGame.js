@@ -10,7 +10,7 @@ const gameBoard = document.getElementById('sec-game-board')
 function main(currentTime) {
   if (gameOver) {
     if (confirm('You lost. Press ok to restart.')) {
-      window.location = '/'
+      window.location = '/Snek/'
     }
     return
   }
