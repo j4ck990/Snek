@@ -35,6 +35,7 @@ A variant of the classic snake game featuring different gamemodes
 * Improve AI survivability and efficiency
 * Display scoring system
 * Improve aesthetics
+* Tidy up sphaghetti code
 * Ensure final game is ready
 
 
