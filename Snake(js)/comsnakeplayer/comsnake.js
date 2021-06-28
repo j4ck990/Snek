@@ -1,7 +1,7 @@
-import { getInputDirection } from "./input.js"
+import { getInputDirection } from "./comAI.js"
 
-export const SNAKE_SPEED = 5
-const snakeBody = [{ x: 11, y: 11 }]
+export const SNAKE_SPEED = 7
+const snakeBody = [{ x: 11, y: 10 }]
 let newSegments = 0
 
 export function update() {
@@ -24,7 +24,7 @@ export function draw(gameBoard) {
     if (i === 0 ) {
       snakeElement.classList.add('head')
     } else {
-        snakeElement.classList.add('snake')
+      snakeElement.classList.add('snake')
     }
     gameBoard.appendChild(snakeElement)
   }
@@ -45,11 +45,19 @@ export function getSnakeHead() {
   return snakeBody[0]
 }
 
+export function getSnakeTail() {
+  return snakeBody[snakeBody.length - 1]
+}
+
+export function getSnakeLength() {
+  return snakeBody.length
+}
+
 export function snakeIntersection() {
   return onSnake(snakeBody[0], { ignoreHead: true })
 }
 
-function equalPositions(pos1, pos2) {
+export function equalPositions(pos1, pos2) {
   return pos1.x === pos2.x && pos1.y === pos2.y
 }
 

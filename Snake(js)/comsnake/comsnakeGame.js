@@ -1,10 +1,10 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './snake.js'
-import { update as updateFood, draw as drawFood } from './food.js'
-import { outsideGrid } from './grid.js'
+import { update as updateFood, draw as drawFood } from './comfood.js'
+import { outsideGrid } from './comgrid.js'
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './comsnake.js'
 
 let lastRenderTime = 0
 let gameOver = false
-const gameBoard = document.getElementById('game-board')
+const gameBoard = document.getElementById('com-game-board')
 
 function main(currentTime) {
   if (gameOver) {
@@ -25,7 +25,7 @@ function main(currentTime) {
   update()
   draw()
 }
-
+  
 window.requestAnimationFrame(main)
 
 function update() {
