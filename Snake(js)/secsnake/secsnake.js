@@ -1,7 +1,8 @@
 import { getInputDirection } from "./secinput.js"
+import { update as updateScore } from "./secscore.js"
 
 export const SNAKE_SPEED = 7
-const snakeBody = [{ x: 11, y: 10 }]
+export const snakeBody = [{ x: 11, y: 10 }]
 let newSegments = 0
 
 export function update() {
@@ -31,6 +32,7 @@ export function draw(gameBoard) {
 }
 
 export function expandSnake(amount) {
+  updateScore()
   newSegments += amount
 }
 

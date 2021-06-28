@@ -1,6 +1,7 @@
 import { update as updateFood, draw as drawFood } from './comfood.js'
-import { outsideGrid } from './comgrid.js'
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './comsnake.js'
+import { draw as drawScore } from './comscore.js'
+import { outsideGrid } from './comgrid.js'
 
 let lastRenderTime = 0
 let gameOver = false
@@ -38,6 +39,7 @@ function draw() {
   gameBoard.innerHTML = ''
   drawSnake(gameBoard)
   drawFood(gameBoard)
+  drawScore(gameBoard)
 }
 
 function checkDeath() {

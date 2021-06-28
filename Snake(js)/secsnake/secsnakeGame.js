@@ -1,5 +1,6 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './secsnake.js'
 import { update as updateFood, draw as drawFood } from './secfood.js'
+import { draw as drawScore } from './secscore.js'
 import { outsideGrid } from './secgrid.js'
 
 let lastRenderTime = 0
@@ -38,6 +39,7 @@ function draw() {
   gameBoard.innerHTML = ''
   drawSnake(gameBoard)
   drawFood(gameBoard)
+  drawScore(gameBoard)
 }
 
 function checkDeath() {
