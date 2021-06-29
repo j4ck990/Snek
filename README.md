@@ -28,7 +28,7 @@ A variant of the classic snake game featuring different gamemodes
 * Stay on ending board until both players finish
 
 ### AI
-* Improve A star survivability (205 failure rate)
+* Improve A star survivability (20% failure rate)
 * Decrease number of steps required to finish game (average ~23k)
 
 # Milestone 3
