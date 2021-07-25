@@ -25,7 +25,7 @@
 
         #game-board {
             background-color: black;
-            border: lightgray .15vmin solid;
+            border: lightgray .25vmin solid;
             width: 99vmin;
             height: 99vmin;
             display: grid;
@@ -35,7 +35,7 @@
 
         #com-game-board {
             background-color: black;
-            border: lightgray .15vmin solid;
+            border: lightgray .25vmin solid;
             width: 99vmin;
             height: 99vmin;
             display: grid;
@@ -45,55 +45,55 @@
 
         .head {
             background-color: darkgreen;
+
         }
 
         .snake {
             background-color: greenyellow;
+
         }
 
         .food {
             background-color: red;
-            border: .25vmin solid black;
+            border-left: .25vmin solid black;
+            border-bottom: .25vmin solid black;
             border-radius: 50%;
         }
 
         .snake-corner{
             
             position: relative;
-            border-left:  .25vmin black solid;
-            border-bottom:  .25vmin black solid;
-            
-            
+            border-left:  .05vmin black solid;
+            border-bottom:  .05vmin black solid;
         }
 
         .snake-corner:before {
             content: '';
             position: absolute;
             top: 0; right: 0;
-            border-top: .25vmin black solid;
-            border-left: .25vmin black solid;
+            border-top: .05vmin black solid;
+            border-left: .05vmin black solid;
         }
 
         .snake-piece {
-            padding-right: .25vmin;
+            padding-right: .05vmin;
             position: relative;
-            border-bottom:  .25vmin black solid;
+            border-bottom:  .05vmin black solid;
             
         }
         .snake-piece:before {
             content: '';
             position: absolute;
-            top: 0; right: 0px;
-            border-top: .25vmin black solid;
+            top: 0; right: 0;
+            border-top: .05vmin black solid;
             border-left: 5vmin black solid;
         }
 
+
     </style>
-    <script src="./firstsnake/snakeGame.js" defer type="module"></script>
-    <script src="./comsnakeplayer/comsnakeGame.js" defer type="module"></script>
+    <script src="./comsnake/comsnakeGame.js" defer type="module"></script>
 </head>
 <body>
-    <div id="game-board"></div>
     <div id="com-game-board"></div>
 </body>
 </html>

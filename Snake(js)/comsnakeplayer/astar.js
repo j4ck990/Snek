@@ -35,16 +35,33 @@ export function will_survive(coords) {
 }
 
 export function getAStarDir() {
-    if (directions.length != 0) {
-        let temp = directions.shift()
-        return temp
+
+    runAStar()
+    return directions.shift()
+
+}
+
+function getLivableDir(coord) {
+    let canRight = will_survive({x: coord.x + 1, y: coord.y})
+    let canLeft = will_survive({x: coord.x - 1, y: coord.y})
+    let canUp = will_survive({x: coord.x, y: coord.y - 1})
+    let canDown = will_survive({x: coord.x, y: coord.y + 1})
+
+    if(canRight) {
+        return {x: 1, y: 0}
+    } else if(canLeft) {
+        return {x: -1, y: 0}
+    } else if(canUp) {
+        return {x: 0, y: -1}
     } else {
-        runAStar()
-        return directions.shift()
-    }
+        return {x: 0, y: 1}
+    } 
+
+
 }
 
 function runAStar() {
+    directions = []
     let sortedVal = new PriorityQueue()
     let food = getCurrentFoodPosition()
     let head = getSnakeHead()
@@ -62,6 +79,9 @@ function runAStar() {
         
             if (sortedVal.length === 0) {
                 console.log("IM TRAPPED")
+                let tempdir = getLivableDir(head)
+                console.log(tempdir)
+                directions.unshift(tempdir)
                 return
             }
             currAnode = sortedVal.pop()
@@ -77,6 +97,7 @@ function runAStar() {
 
     return
 }
+
 
 function addNeigh(pq, nodelst, prevNode, food) {
     let coord = prevNode.coords

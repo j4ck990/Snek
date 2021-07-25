@@ -15,7 +15,7 @@ export function update() {
 
 export function draw(gameboard) {
     steps++
-    var canvas = document.getElementById("score2");
+    var canvas = document.getElementById("score1");
     // var ctx = canvas.getContext("2d");
     // ctx.font = "30px Arial";
     // ctx.textAlign = "center";
