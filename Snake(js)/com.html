@@ -28,6 +28,8 @@
             border: lightgray .15vmin solid;
             width: 99vmin;
             height: 99vmin;
+            max-height: 50vw;
+            max-width: 50%;
             display: grid;
             grid-template-rows: repeat(20, 1fr);
             grid-template-columns: repeat(20, 1fr);
@@ -38,6 +40,8 @@
             border: lightgray .15vmin solid;
             width: 99vmin;
             height: 99vmin;
+            max-height: 50vw;
+            max-width: 50%;
             display: grid;
             grid-template-rows: repeat(20, 1fr);
             grid-template-columns: repeat(20, 1fr);
@@ -88,6 +92,24 @@
             border-left: 5vmin black solid;
         }
 
+        .outer {
+            width: 99vmin;
+            max-width: 50%;
+            background: red; /* A color just for debug */
+            position: absolute;
+            top: 5px;
+            z-index: 2;
+        }
+
+        #score1 {
+            position: absolute;
+            left: 0px;
+        }
+
+        #score2 {
+            position: absolute;
+            right: 0px;
+        }
     </style>
     <script src="./firstsnake/snakeGame.js" defer type="module"></script>
     <script src="./comsnakeplayer/comsnakeGame.js" defer type="module"></script>
@@ -95,5 +117,9 @@
 <body>
     <div id="game-board"></div>
     <div id="com-game-board"></div>
+    <div class="outer">
+        <div id="score1">test1</div>
+        <div id="score2">test2</div>
+    </div>
 </body>
 </html>
