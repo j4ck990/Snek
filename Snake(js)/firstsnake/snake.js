@@ -1,7 +1,7 @@
 import { getInputDirection } from "./input.js"
 import { update as updateScore } from "./score.js"
 
-export const SNAKE_SPEED = 10
+export const SNAKE_SPEED = 12
 export const snakeBody = [{ x: 11, y: 10 }]
 const dic_directions = {
   up: { x: 0, y: -1 },
