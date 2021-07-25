@@ -1,5 +1,5 @@
 import { getInputDirection } from "./comAI.js"
-import { update as updateScore } from "./comscore.js"
+import { update as updateScore } from "./com_score.js"
 
 export const SNAKE_SPEED = 10
 export const snakeBody = [{ x: 11, y: 10 }]
