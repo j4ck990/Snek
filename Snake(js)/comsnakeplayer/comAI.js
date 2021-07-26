@@ -29,7 +29,7 @@ export function getInputDirection() {
     // console.log(count)
     
     let emptyDist = ARENA_SIZE - getSnakeLength() - EXPANSION_RATE
-    if (getSnakeLength() < ARENA_SIZE / 5) {
+    if (getSnakeLength() < ARENA_SIZE / 10) {
         return getAStarDir()
     }
     // console.log("transit")
