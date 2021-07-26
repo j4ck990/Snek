@@ -8,12 +8,12 @@ const gameBoard = document.getElementById('com-game-board')
 
 function main(currentTime) {
   if (gameOver) {
-    window.location = 'Snek/Snake(js)/snakeAI.html'
+    window.location = '/snakeAI.html'
     return
   }
 
   if(getSnakeLength() == GRID_SIZE * GRID_SIZE - 1) {
-    window.location = 'Snek/Snake(js)/snakeAI.html'
+    window.location = '/snakeAI.html'
     return
   }
 
