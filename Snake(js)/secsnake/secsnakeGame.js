@@ -43,5 +43,5 @@ function draw() {
 }
 
 function checkDeath() {
-  gameState(outsideGrid(getSnakeHead()) || snakeIntersection())
+  setState(outsideGrid(getSnakeHead()) || snakeIntersection())
 }
