@@ -1,6 +1,6 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './snake.js'
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection, getSnakeLength} from './snake.js'
 import { update as updateFood, draw as drawFood } from './food.js'
-import { outsideGrid } from './grid.js'
+import { outsideGrid, GRID_SIZE } from './grid.js'
 import { draw as drawScore } from './score.js'
 import { endGame } from '../end.js'
 
@@ -9,11 +9,10 @@ export let gameOver = false
 const gameBoard = document.getElementById('game-board')
 
 function main(currentTime) {
-  if (gameOver) {
+  if (gameOver ||  getSnakeLength() == GRID_SIZE * GRID_SIZE - 1) {
     endGame()
     return
   }
-
 
   window.requestAnimationFrame(main)
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000

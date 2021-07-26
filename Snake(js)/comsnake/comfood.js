@@ -1,4 +1,4 @@
-import { onSnake, expandSnake, snakeBody } from './comsnake.js'
+import { onSnake, expandSnake, getSnakeLength } from './comsnake.js'
 import { randomGridPosition , GRID_SIZE} from './comgrid.js'
 
 let food = getRandomFoodPosition()

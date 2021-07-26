@@ -18,7 +18,7 @@ export function update() {
   if (!equalPositions(inputDirection, {x: 0, y:0})) {
     incrStep()
   }
-  
+
   for (let i = snakeBody.length - 2; i >= 0; i--) {
     snakeBody[i + 1] = { ...snakeBody[i] }
   }
@@ -117,6 +117,10 @@ export function onSnake(position, { ignoreHead = false } = {}) {
 
 export function getSnakeHead() {
   return snakeBody[0]
+}
+
+export function getSnakeLength() {
+  return snakeBody.length
 }
 
 export function snakeIntersection() {

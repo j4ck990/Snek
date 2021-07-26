@@ -1,6 +1,6 @@
 import { update as updateFood, draw as drawFood } from './comfood.js'
 import { outsideGrid, GRID_SIZE } from './comgrid.js'
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection, snakeBody } from './comsnake.js'
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection, getSnakeLength } from './comsnake.js'
 
 let lastRenderTime = 0
 let gameOver = false
@@ -8,16 +8,12 @@ const gameBoard = document.getElementById('com-game-board')
 
 function main(currentTime) {
   if (gameOver) {
-    if (confirm('You lost. Press ok to restart.')) {
-      window.location = '/'
-    }
+    window.location = '/Snake(js)/snakeAI.html'
     return
   }
 
-  if(snakeBody.length == GRID_SIZE * GRID_SIZE - 1) {
-    if (confirm('You win. Replay?')) {
-      window.location = '/'
-    }
+  if(getSnakeLength() == GRID_SIZE * GRID_SIZE - 1) {
+    window.location = '/Snake(js)/snakeAI.html'
     return
   }
 

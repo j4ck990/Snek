@@ -20,6 +20,7 @@
             margin: 0;
             padding: 0;
             background-color: black;
+            overflow: hidden;
         }
 
         #game-board {
@@ -135,7 +136,7 @@
             position: absolute;
             top: 0; right: 0;
             border-top: .2vmin black solid;
-            border-left: 4.6vmin black solid;
+            border-left: 4.5vmin black solid;
         }
 
         .snake-piece-up {
@@ -148,7 +149,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0;
-            border-top: 4.6vmin black solid;
+            border-top: 4.5vmin black solid;
             border-right: .2vmin black solid;
         }
 
@@ -188,13 +189,90 @@
         }
 
         #end {
-            width: 100vw;
-            height: 100vh;
+            width: 90vw;
+            height: 90vh;
             background: black;
-            opacity: 0.7;
+            opacity: 0.8;
             position: absolute;
             z-index: 10;
             display: none;
+            text-align: center;
+            align-items: center;
+            overflow: hidden;
+            animation: Slide_Up 2.0s ease;
+        }
+
+
+        .buttons {
+            margin: 0% 40%;
+            margin-top: 5vmin;
+            overflow: hidden;
+        }
+
+        .buttons a{
+            text-decoration: none;
+        }
+
+        .option{
+            display: block;
+            margin-bottom: 50px;
+            width: 100%;
+            color: rgb(67, 233, 94);
+            background-color: transparent;
+            /* background-color: rgba(0,0,0,0.6); */
+            font-size: 30px;
+            letter-spacing: 1px;
+            border-radius: 10px;
+            border: none;
+            outline: solid 1px gray;
+            box-shadow: inset 0 0 0 0 rgb(67, 233, 94);
+            transition: ease-out 0.3s;
+            outline: none;
+            overflow: hidden;
+            font-family: Courier;
+            font-weight: bold;
+        }
+
+        .option:hover {
+            box-shadow: inset 200vmin 0 0 0 rgb(67, 233, 94);
+            cursor: pointer;
+            color: black;
+        }
+
+        .option p {
+            margin: 5px 20px;
+            overflow: hidden;
+        }
+
+        #button1 {
+            
+            animation: Slide_Up 2.3s ease;
+
+        }
+
+        #button2 {
+            animation: Slide_Up 2.5s ease;
+        }
+
+
+        @keyframes Slide_Up {
+            0% {
+                transform: translateY(500px);
+                overflow: hidden;
+            }
+            100% {
+                transform: translateY(0);
+                overflow: hidden;
+            }
+            
+        }
+
+        #winban {
+            color: white;
+            font-family: Courier;
+            font-size: 5vmin;
+            margin-top: 25vmin;
+            background-color: none;
         }
 
     </style>
@@ -211,6 +289,12 @@
         <div id="score1" class="scoring">test1</div>
         <div id="score2" class="scoring">test2</div>
     </div>
-    <div id="end"></div>
+    <div id="end">
+        <p id="winban">Winner Banner</p>
+        <div class="buttons">
+            <a href="./snake.html"><button type="button" class="option" id="button1"><p>Replay</p></button></a>
+            <a href="../index.html"><button type="button" class="option" id="button2"><p>Home</p></button></a>
+        </div>
+    </div>
 </body>
 </html>

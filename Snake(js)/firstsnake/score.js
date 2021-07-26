@@ -4,7 +4,7 @@ import { snakeBody } from './snake.js'
 const base_points = 500
 const bonus_points = 250
 let steps = 0
-let score = 0
+export let score = 0
 
 export function update() {
     const max_steps = GRID_SIZE * GRID_SIZE - snakeBody.length

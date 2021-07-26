@@ -1,7 +1,7 @@
 import { endGame } from '../end.js'
 import { update as updateFood, draw as drawFood } from './comfood.js'
-import { outsideGrid } from './comgrid.js'
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './comsnake.js'
+import { outsideGrid, GRID_SIZE } from './comgrid.js'
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection, getSnakeLength } from './comsnake.js'
 import { draw as drawScore } from './com_score.js'
 import { gameOver, setState } from './gamestate.js'
 
@@ -9,11 +9,10 @@ let lastRenderTime = 0
 const gameBoard = document.getElementById('com-game-board')
 
 function main(currentTime) {
-  if (gameOver) {
+  if (gameOver ||  getSnakeLength() == GRID_SIZE * GRID_SIZE - 1) {
     endGame()
     return
   }
-
 
   window.requestAnimationFrame(main)
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
