@@ -3,9 +3,10 @@ import { update as updateFood, draw as drawFood } from './secfood.js'
 import { outsideGrid } from './secgrid.js'
 import { draw as drawScore } from './secscore.js'
 import { endGame } from '../end.js'
+import { gameOver, setState } from './gamestate.js'
 
 let lastRenderTime = 0
-export let gameOver = false
+// export let gameOver = false
 const gameBoard = document.getElementById('sec-game-board')
 
 function main(currentTime) {
@@ -42,5 +43,5 @@ function draw() {
 }
 
 function checkDeath() {
-  gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+  gameState(outsideGrid(getSnakeHead()) || snakeIntersection())
 }

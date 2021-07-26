@@ -3,9 +3,10 @@ import { update as updateFood, draw as drawFood } from './comfood.js'
 import { outsideGrid } from './comgrid.js'
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './comsnake.js'
 import { draw as drawScore } from './com_score.js'
+import { gameOver, setState } from './gamestate.js'
 
 let lastRenderTime = 0
-export let gameOver = false
+// export let gameOver = false
 const gameBoard = document.getElementById('com-game-board')
 
 function main(currentTime) {
@@ -42,5 +43,6 @@ function draw() {
 }
 
 function checkDeath() {
-  gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+  // gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+  setState(outsideGrid(getSnakeHead()) || snakeIntersection())
 }
