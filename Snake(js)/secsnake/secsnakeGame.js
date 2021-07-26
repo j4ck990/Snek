@@ -6,7 +6,6 @@ import { endGame } from '../end.js'
 import { gameOver, setState } from './gamestate.js'
 
 let lastRenderTime = 0
-// export let gameOver = false
 const gameBoard = document.getElementById('sec-game-board')
 
 function main(currentTime) {

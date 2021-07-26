@@ -4,7 +4,6 @@ import { outsideGrid } from './grid.js'
 import { draw as drawScore } from './score.js'
 import { endGame } from '../end.js'
 
-
 let lastRenderTime = 0
 export let gameOver = false
 const gameBoard = document.getElementById('game-board')

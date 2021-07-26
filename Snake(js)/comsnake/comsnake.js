@@ -33,12 +33,13 @@ export function draw(gameBoard) {
     
     if (i === 0 ) {
       snakeElement.classList.add('head')
-      snakeElement.classList.add('snake-piece')
       if (snakeBody.length != 1) {
         let nextcoord = snakeBody[i + 1]
         let nextdir = {x: (nextcoord.x - currcoord.x), y: (nextcoord.y - currcoord.y)}
         if(equalPositions(nextdir, dic_directions["up"]) || equalPositions(nextdir, dic_directions["down"])) {
-          snakeElement.style.transform = "rotate(90deg)"
+          snakeElement.classList.add('snake-piece-up')
+        } else {
+          snakeElement.classList.add('snake-piece')
         }
       }
     } else {
@@ -46,9 +47,10 @@ export function draw(gameBoard) {
       let prevcoord = snakeBody[i - 1]
       let prevdir = {x: (prevcoord.x - currcoord.x), y: (prevcoord.y - currcoord.y)}
       if (i == snakeBody.length - 1) {
-        snakeElement.classList.add('snake-piece')
         if(equalPositions(prevdir, dic_directions["up"]) || equalPositions(prevdir, dic_directions["down"])) {
-          snakeElement.style.transform = "rotate(90deg)"
+          snakeElement.classList.add('snake-piece-up')
+        } else {
+          snakeElement.classList.add('snake-piece')
         }
         gameBoard.appendChild(snakeElement)
         continue
@@ -57,21 +59,24 @@ export function draw(gameBoard) {
       let nextdir = {x: (nextcoord.x - currcoord.x), y: (nextcoord.y - currcoord.y)}
 
       if(isOpp(prevdir, nextdir)) {
-        snakeElement.classList.add('snake-piece')
         if(equalPositions(prevdir, dic_directions["up"]) || equalPositions(prevdir, dic_directions["down"])) {
-          snakeElement.style.transform = "rotate(90deg)"
+          snakeElement.classList.add('snake-piece-up')
+        } else {
+          snakeElement.classList.add('snake-piece')
         }
       } else {
-        snakeElement.classList.add('snake-corner')
+
         if ((equalPositions(prevdir, dic_directions["up"]) && equalPositions(nextdir, dic_directions["left"])) || 
         equalPositions(prevdir, dic_directions["left"]) && equalPositions(nextdir, dic_directions["up"])) {
-          snakeElement.style.transform = "rotate(-90deg)"
+          snakeElement.classList.add('snake-corner-up-left')
         } else if ((equalPositions(prevdir, dic_directions["down"]) && equalPositions(nextdir, dic_directions["left"])) || 
         equalPositions(prevdir, dic_directions["left"]) && equalPositions(nextdir, dic_directions["down"])) {
-          snakeElement.style.transform = "rotate(180deg)"
+          snakeElement.classList.add('snake-corner-down-left')
         } else if ((equalPositions(prevdir, dic_directions["down"]) && equalPositions(nextdir, dic_directions["right"])) || 
         equalPositions(prevdir, dic_directions["right"]) && equalPositions(nextdir, dic_directions["down"])) {
-          snakeElement.style.transform = "rotate(90deg)"
+          snakeElement.classList.add('snake-corner-down-right')
+        } else {
+          snakeElement.classList.add('snake-corner-up-right')
         }
       }
     }

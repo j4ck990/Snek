@@ -7,6 +7,7 @@ import {will_survive, getAStarDir} from "./astar.js"
 let hamilcycle = new Hamilcycle()
 let count = 0
 const ARENA_SIZE = GRID_SIZE * GRID_SIZE
+const BUFFER = 1
 const dic_directions = {
     up: { x: 0, y: -1 },
     down: { x: 0, y: 1 },
@@ -25,13 +26,13 @@ function calcDist(start, end) {
 
 export function getInputDirection() {
     count++
-    console.log(count)
+    // console.log(count)
     
     let emptyDist = ARENA_SIZE - getSnakeLength() - EXPANSION_RATE
-    if (getSnakeLength() < ARENA_SIZE / 10) {
+    if (getSnakeLength() < ARENA_SIZE / 5) {
         return getAStarDir()
     }
-    console.log("transit")
+    // console.log("transit")
     let head = getSnakeHead()
     let headpos = hamilcycle.getNodePosition(head.x, head.y)
     let tail = getSnakeTail()

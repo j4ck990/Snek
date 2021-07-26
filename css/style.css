@@ -33,6 +33,7 @@
     margin-bottom: 20px;
     animation: Slide_Up 2s ease;
     overflow: hidden;
+    font-family: Courier;
 }
 
 .buttons a{
@@ -56,6 +57,8 @@
     transition: ease-out 0.3s;
     outline: none;
     overflow: hidden;
+    font-family: Courier;
+    font-weight: bold;
 }
 
 .option:hover {

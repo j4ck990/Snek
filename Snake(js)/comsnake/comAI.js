@@ -26,13 +26,13 @@ function calcDist(start, end) {
 
 export function getInputDirection() {
     count++
-    console.log(count)
+    // console.log(count)
     
     let emptyDist = ARENA_SIZE - getSnakeLength() - EXPANSION_RATE
     if (getSnakeLength() < ARENA_SIZE / 10) {
         return getAStarDir()
     }
-    console.log("transit")
+    // console.log("transit")
     let head = getSnakeHead()
     let headpos = hamilcycle.getNodePosition(head.x, head.y)
     let tail = getSnakeTail()
