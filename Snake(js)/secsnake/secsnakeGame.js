@@ -2,16 +2,15 @@ import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, sn
 import { update as updateFood, draw as drawFood } from './secfood.js'
 import { outsideGrid } from './secgrid.js'
 import { draw as drawScore } from './secscore.js'
+import { endGame } from '../end.js'
 
 let lastRenderTime = 0
-let gameOver = false
+export let gameOver = false
 const gameBoard = document.getElementById('sec-game-board')
 
 function main(currentTime) {
   if (gameOver) {
-    if (confirm('You lost. Press ok to restart.')) {
-      window.location = '/'
-    }
+    endGame()
     return
   }
 

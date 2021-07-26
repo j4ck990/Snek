@@ -94,7 +94,7 @@
         .outer {
             width: 99vmin;
             max-width: 50%;
-            background: red; /* A color just for debug */
+            background: black; 
             position: absolute;
             top: 5px;
             z-index: 2;
@@ -103,11 +103,23 @@
         #score1 {
             position: absolute;
             left: 0px;
+            color: white;
         }
 
         #score2 {
             position: absolute;
             right: 0px;
+            color: white;
+        }
+
+        #end {
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            opacity: 0.7;
+            position: absolute;
+            z-index: 10;
+            display: none;
         }
     </style>
     <script src="./firstsnake/snakeGame.js" defer type="module"></script>
@@ -120,5 +132,6 @@
         <div id="score1">test1</div>
         <div id="score2">test2</div>
     </div>
+    <div id="end"></div>
 </body>
 </html>
