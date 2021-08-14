@@ -1,7 +1,7 @@
 import { getInputDirection } from "./comAI.js"
 import { update as updateScore, incrStep } from "./com_score.js"
 
-export const SNAKE_SPEED = 12
+export const SNAKE_SPEED = 1000
 export const snakeBody = [{ x: 11, y: 10 }]
 const dic_directions = {
   up: { x: 0, y: -1 },
@@ -34,7 +34,7 @@ export function draw(gameBoard) {
     snakeElement.style.gridRowStart = currcoord.y
     snakeElement.style.gridColumnStart = currcoord.x
     
-    if (i === 0 ) {
+    if (i === 0 ) { 
       snakeElement.classList.add('head')
       if (snakeBody.length != 1) {
         let nextcoord = snakeBody[i + 1]
@@ -87,7 +87,7 @@ export function draw(gameBoard) {
   }
 }
 
-function oppDir(dir) {
+export function oppDir(dir) {
   if (equalPositions(dir, dic_directions["up"])) {
     return dic_directions["down"]
   } else if (equalPositions(dir, dic_directions["down"])) {

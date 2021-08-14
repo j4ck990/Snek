@@ -3,13 +3,15 @@ import { update as updateFood, draw as drawFood } from './comfood.js'
 import { outsideGrid, GRID_SIZE } from './comgrid.js'
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection, getSnakeLength } from './comsnake.js'
 import { draw as drawScore } from './com_score.js'
-import { gameOver, setState } from './gamestate.js'
+import { gameOver, setState, score as comScore } from './gamestate.js'
+import {score as playerScore} from "../firstsnake/score.js"
+import { gameOver as playerEnd} from "../firstsnake/snakeGame.js";
 
 let lastRenderTime = 0
 const gameBoard = document.getElementById('com-game-board')
 
 function main(currentTime) {
-  if (gameOver ||  getSnakeLength() == GRID_SIZE * GRID_SIZE - 1) {
+  if (gameOver) {
     endGame()
     return
   }
@@ -41,5 +43,8 @@ function draw() {
 }
 
 function checkDeath() {
-  setState(outsideGrid(getSnakeHead()) || snakeIntersection())
+  setState(outsideGrid(getSnakeHead()) || snakeIntersection() || (playerEnd && playerScore < comScore) || getSnakeLength() == GRID_SIZE * GRID_SIZE - 1)
+  if (gameOver) {
+    document.getElementById("gameover2").style.display = "block"
+  }
 }

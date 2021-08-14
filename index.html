@@ -9,12 +9,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Animated Landing Page</title>
+    <title>Snake</title>
   </head>
   <body>
     <div class="container">
         <canvas id="bg">
-            <script src="js/matrix.js"></script>
+          <script src="js/matrix.js"></script>
         </canvas>
         <div class="content">
           <div class="title">
@@ -22,10 +22,52 @@
           </div>
           <div class="buttons">
             <a href="Snake(js)/snake.html"><button type="button" class="option" id="button1"><p>Multiplayer</p></button></a>
-            <a href="Snake(js)/com.html"><button type="button" class="option" id="button2"><p>AI</p></button></a>
+            <button type="button" class="option" id="button2"><p>AI</p></button>
+            <div class="diff" id="diff">
+              <input type="range" min="1" max="10" value="1" class="slider" id="slider">
+              <output class="bubble" id="bubble">Difficulty: 1</output>
+              <a href="Snake(js)/com.html"><button type="button" id="play"><p>Play</p></button></a>
+            </div>
             <a href="Snake(js)/snakeAI.html"><button type="button" class="option" id="button3"><p>Wallpaper</P></button></a>
           </div>
         </div>
     </div>
+    <script>
+      document.getElementById("button2").onclick = function() {convert()}
+
+      function convert() {
+        document.getElementById("button2").style.display = "none"
+        document.getElementById("diff").style.display = "block"
+      }
+
+      const slider = document.getElementById("slider")
+      const bubble = document.getElementById("bubble")
+
+      slider.addEventListener("input", () => {
+        setBubble(slider, bubble)
+      })
+
+      function setBubble(slider, bubble) {
+        const val = slider.value
+        const min = slider.min
+        const max = slider.max
+        const newVal = Number(((val - min) * 100) / (max - min));
+        bubble.innerHTML = "Difficulty: " + val
+        if (val == 10) {
+          bubble.style.left = `calc(${newVal * 0.75}% - (${newVal * 0.33}px))`
+        } else {
+          bubble.style.left = `calc(${newVal * 0.75}% - (${newVal * 0.31}px))`
+        }
+        
+      }
+
+      document.getElementById("play").onclick = function() {setDifficulty()}
+
+      function setDifficulty() {
+        localStorage.setItem("difficulty", slider.value)
+      }
+
+    </script>
+    
   </body>
 </html>

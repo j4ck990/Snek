@@ -41,5 +41,8 @@ function draw() {
 }
 
 function checkDeath() {
-  gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+  gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()  || getSnakeLength() == GRID_SIZE * GRID_SIZE - 1
+  if (gameOver) {
+    document.getElementById("gameover1").style.display = "block"
+  }
 }

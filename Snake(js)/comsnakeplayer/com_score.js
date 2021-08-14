@@ -8,12 +8,12 @@ let steps = 0
 
 export function update() {
     const max_steps = GRID_SIZE * GRID_SIZE
-    console.log("AI steps: " + steps)
+    // console.log("AI steps: " + steps)
     // score += base_points + Math.floor(bonus_points*(max_steps - steps)/max_steps)
     updateScore(base_points + Math.floor((Math.max(max_steps - steps, 0)/ max_steps) * bonus_points) +  
             Math.floor((snakeBody.length/(GRID_SIZE * GRID_SIZE)) * bonus_points))
     steps = 0
-    console.log("AI: " + score)
+    // console.log("AI: " + score)
 }
 
 export function draw(gameboard) {

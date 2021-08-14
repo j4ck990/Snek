@@ -7,13 +7,14 @@ export function endGame() {
     if (end1 && (end2 || endAI)) {
         const winbanner = document.getElementById("winban")
         const butt = document.getElementById("button1")
-        const butt2 = document.getElementById("button2")
         
         let otherscore = 0;
         if (end2) {
             otherscore = score2
             if (otherscore > score1) {
                 winbanner.textContent = "Player 2 Wins !!!"
+            } else if (otherscore === score1) {
+                winbanner.textContent = "It's a draw"
             } else {
                 winbanner.textContent = "Player 1 Wins !!!"
             }
@@ -21,13 +22,17 @@ export function endGame() {
             otherscore = scoreAI
             if (otherscore > score1) {
                 winbanner.textContent = "AI Overlord wins !!!"
-                // butt2.setAttribute('href', "../index.html")
-                // butt2.href = "../index.html"
-            } else {
-                winbanner.textContent = "I Demand a Rematch"
+            } else if (otherscore === score1) {
+                winbanner.textContent = "It's a draw"
+            } else if(localStorage.getItem("difficulty") == 10){
+                winbanner.textContent = "Impossible! I Demand a Rematch"
                 butt.textContent = "REMATCH"
-                // butt2.setAttribute('href', "./com.html")
-                // // butt2.href = "./com.html"
+                const butt2 = document.getElementById("button2")
+                const buttG = document.getElementById("gimmick")
+                butt2.style.display = "none"
+                buttG.style.display = "block"
+            } else {
+                winbanner.textContent = "You win !!!"
             }
         }
         const endpage = document.getElementById("end")
