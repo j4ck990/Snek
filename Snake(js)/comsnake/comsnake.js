@@ -36,21 +36,31 @@ export function draw(gameBoard) {
       if (snakeBody.length != 1) {
         let nextcoord = snakeBody[i + 1]
         let nextdir = {x: (nextcoord.x - currcoord.x), y: (nextcoord.y - currcoord.y)}
-        if(equalPositions(nextdir, dic_directions["up"]) || equalPositions(nextdir, dic_directions["down"])) {
-          snakeElement.classList.add('snake-piece-up')
-        } else {
-          snakeElement.classList.add('snake-piece')
+        if(equalPositions(nextdir, dic_directions["up"])) {
+          snakeElement.classList.add('terminal-piece-down')
+        } else if(equalPositions(nextdir, dic_directions["left"])) {
+          snakeElement.classList.add('terminal-piece-right')
+        }else if(equalPositions(nextdir, dic_directions["down"])) {
+          snakeElement.classList.add('terminal-piece-up')
+        }else {
+          snakeElement.classList.add('terminal-piece-left')
         }
+      } else {
+        snakeElement.classList.add('circle')
       }
     } else {
       snakeElement.classList.add('snake')
       let prevcoord = snakeBody[i - 1]
       let prevdir = {x: (prevcoord.x - currcoord.x), y: (prevcoord.y - currcoord.y)}
       if (i == snakeBody.length - 1) {
-        if(equalPositions(prevdir, dic_directions["up"]) || equalPositions(prevdir, dic_directions["down"])) {
-          snakeElement.classList.add('snake-piece-up')
-        } else {
-          snakeElement.classList.add('snake-piece')
+        if(equalPositions(prevdir, dic_directions["up"])) {
+          snakeElement.classList.add('terminal-piece-down')
+        } else if(equalPositions(prevdir, dic_directions["left"])) {
+          snakeElement.classList.add('terminal-piece-right')
+        }else if(equalPositions(prevdir, dic_directions["down"])) {
+          snakeElement.classList.add('terminal-piece-up')
+        }else {
+          snakeElement.classList.add('terminal-piece-left')
         }
         gameBoard.appendChild(snakeElement)
         continue

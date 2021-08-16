@@ -21,7 +21,7 @@ export function endGame() {
         } else {
             otherscore = scoreAI
             if (otherscore > score1) {
-                winbanner.textContent = "AI Overlord wins !!!"
+                winbanner.textContent = "AI wins !!!"
             } else if (otherscore === score1) {
                 winbanner.textContent = "It's a draw"
             } else if(localStorage.getItem("difficulty") == 10){

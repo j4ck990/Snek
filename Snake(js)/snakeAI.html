@@ -125,6 +125,72 @@
             border-right: .2vmin black solid;
         }
 
+        .circle {
+            border-left: .25vmin solid black;
+            border-bottom: .25vmin solid black;
+            border-radius: 45%;
+        }
+
+        .terminal-piece-right {
+            padding-right: .2vmin;
+            position: relative;
+            border-bottom:  .2vmin black solid;
+            border-radius: 0 50% 50% 0;
+            
+        }
+        .terminal-piece-right:before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            border-top: .2vmin black solid;
+            border-left: 4.5vmin black solid;
+        }
+
+        .terminal-piece-left {
+            padding-right: .2vmin;
+            position: relative;
+            border-bottom:  .2vmin black solid;
+            border-radius: 50% 0% 0% 50%;
+            
+        }
+        .terminal-piece-left:before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            border-top: .2vmin black solid;
+            border-left: 4.5vmin black solid;
+        }
+
+        .terminal-piece-up {
+            padding-top: .2vmin;
+            position: relative;
+            border-right:  .2vmin black solid;
+            border-radius: 50% 50% 0 0;
+            
+        }
+        .terminal-piece-up:before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            border-top: 4.5vmin black solid;
+            border-right: .2vmin black solid;
+        }
+
+        .terminal-piece-down {
+            padding-top: .2vmin;
+            position: relative;
+            border-right:  .2vmin black solid;
+            border-radius: 0% 0% 50% 50%;
+            
+        }
+        .terminal-piece-down:before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            border-top: 4.5vmin black solid;
+            border-right: .2vmin black solid;
+        }
+
         .snake-piece {
             padding-right: .2vmin;
             position: relative;
