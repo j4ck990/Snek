@@ -71,7 +71,7 @@
 }
 
 .option:hover {
-    box-shadow: inset 400px 0 0 0 rgb(67, 233, 94);
+    box-shadow: inset 500px 0 0 0 rgb(67, 233, 94);
     cursor: pointer;
     color: black;
 }
